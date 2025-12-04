@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-primary;
+  color: $text-color;
+  line-height: 1.6;
+  background-color: $bg-light;
+  font-weight: $font-weight-normal;
+}
+
+a {
+  text-decoration: none;
+  color: $text-light;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.container {
+  width: $container-width;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+.bold-text {
+  font-weight: $font-weight-bold;
+}
+
+.light-text {
+  font-weight: $font-weight-light;
+}
+
+.sr-only {
+  @include visually-hidden;
+}

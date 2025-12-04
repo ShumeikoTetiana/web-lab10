@@ -1,85 +1,98 @@
+@function rem($pixels, $context: 16) {
+  @return #{$pixels / $context}rem;
+}
+
 @mixin flex-center {
   display: flex;
+  align-items: center;
   justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-@mixin responsive($property, $small, $medium, $large) {
-  #{$property}: $small;
+@mixin box-shadow($x: 0, $y: 5px, $blur: 15px, $alpha: 0.08) {
+  box-shadow: $x $y $blur rgba(0, 0, 0, $alpha);
+}
 
-  @media (min-width: 768px) {
-    #{$property}: $medium;
+@mixin transition($properties...) {
+  transition: $properties;
+}
+
+@mixin button-base {
+  background-color: $primary-color;
+  color: white;
+  padding: 12px 25px;
+  font-size: 14px;
+  font-weight: $font-weight-bold;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $primary-hover;
+    color: white;
   }
 
-  @media (min-width: 1200px) {
-    #{$property}: $large;
+  &:active {
+    background-color: $primary-active;
+    color: white;
   }
 }
 
-@mixin placeholder {
-  ::placeholder { @content; }
-  ::-webkit-input-placeholder { @content; }
-  ::-moz-placeholder { @content; }
-  :-ms-input-placeholder { @content; }
+@mixin icon-circle($size: 60px) {
+  width: $size;
+  height: $size;
+  background-color: $bg-grey;
+  border-radius: 50%;
+  margin: 0 auto $spacing-lg;
+  @include flex-center;
+  font-size: 24px;
+  color: $text-lighter;
 }
 
-@mixin flex-variant($display, $direction: false, $align: false, $justify: false, $wrap: false) {
-  display: $display;
-
-  @if $direction {
-    flex-direction: $direction;
-  }
-
-  @if $align {
-    align-items: $align;
-  }
-
-  @if $justify {
-    justify-content: $justify;
-  }
-
-  @if $wrap {
-    flex-wrap: $wrap;
-  }
-
-  & > * {
-    min-width: 0;
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: $breakpoint-mobile) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: $breakpoint-tablet) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (min-width: $breakpoint-desktop) {
+      @content;
+    }
   }
 }
 
-@mixin flex($direction: false, $align: false, $justify: false, $wrap: false) {
-  @include flex-variant(flex, $direction: $direction, $align: $align, $justify: $justify, $wrap: $wrap);
+@mixin overlay($opacity: 0) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: $opacity;
+  @include transition(opacity $transition-medium);
 }
 
-@mixin inline-flex($direction: false, $align: false, $justify: false, $wrap: false) {
-  @include flex-variant(inline-flex, $direction: $direction, $align: $align, $justify: $justify, $wrap: $wrap);
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  border: 0;
 }
 
-@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
-  @font-face {
-    font-family: quote($font-name);
-    font-style: $style;
-    font-weight: $weight;
-    src: url($file-name + '.eot');
-    src:
-            url($file-name + '.eot?#iefix') format('embedded-opentype'),
-            url($file-name + '.woff') format('woff'),
-            url($file-name + '.ttf') format('truetype'),
-            url($file-name + '.svg##{$font-name}') format('svg');
-  }
-}
-
-@mixin svg-icon($color: false, $width: false, $height: $width) {
-  display: inline-flex;
-  flex-shrink: 0;
-  @if ($width) {
-    width: $width;
-  }
-  @if ($height) {
-    height: $height;
-  }
-
-  @if $color {
-    fill: $color;
-  }
+@function calculate-grid-width($columns, $gap) {
+  @return calc((100% / #{$columns}) - #{$gap});
 }

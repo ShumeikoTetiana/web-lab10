@@ -1,0 +1,31 @@
+mixin portfolioItem(itemClass)
+    .grid-item(class=itemClass, tabindex='0')
+        .hover-overlay
+            i.fas.fa-plus
+
+mixin sectionHeading(title, buttonText)
+    .section-heading
+        h2.section-title= title + ' '
+            span.red-line --
+        if buttonText
+            button.filter-button(tabindex='0')= buttonText
+
+section.works-section
+    .container
+        +sectionHeading('OUR AWESOME WORKS', 'FILTER PORTFOLIO')
+
+        .portfolio-grid
+            -
+                var portfolioItems = [
+                    'item-1', 'item-2', 'item-3', 'item-4',
+                    'item-5', 'item-6', 'item-7', 'item-8', 'item-9'
+                ]
+
+            each item in portfolioItems
+                +portfolioItem(item)
+
+        .contact-prompt
+            p WOULD YOU LOVE TO WORK WITH US?
+            button.contact-button(tabindex='0')
+                i.fas.fa-plus
+                |  CONTACT US

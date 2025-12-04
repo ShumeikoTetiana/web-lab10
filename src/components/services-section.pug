@@ -1,0 +1,41 @@
+mixin serviceItem(icon, title, description)
+    a.service-item(href='#', tabindex='0')
+        .icon-circle
+            i(class='custom-icon-' + icon)
+        h3= title
+        p= description
+
+section.what-we-do-section
+    .container
+        .section-heading
+            h2.section-title WHAT WE DO
+                span.red-line --
+        p.section-subtitle.light-text Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+
+        .services-grid
+            -
+                var services = [
+                    {
+                        icon: 'desktop',
+                        title: 'WEB DESIGN',
+                        description: 'Donec elit non mi porta gravida euismod eget metus. Aenean eu leo quam. Pellentesque ornare sem por quam venenatis vestibulum.'
+                    },
+                    {
+                        icon: 'video',
+                        title: 'MOTION VIDEO',
+                        description: 'Aenean lacinia bibendum nulla sed consectetur. Nullam id dolor id nibh ultricies vehicula ut elit. Sed posuere consectetur.'
+                    },
+                    {
+                        icon: 'print',
+                        title: 'PRINT DESIGN',
+                        description: 'Maecenas sed diam eget risus varius blandit amet non magna. Nullam id dolor id nibh ultricies vehiculaelit praesent commodo.'
+                    },
+                    {
+                        icon: 'heart',
+                        title: 'ILLUSTRATION',
+                        description: 'Cum sociis natoque penatibus et dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac at.'
+                    }
+                ]
+
+            each service in services
+                +serviceItem(service.icon, service.title, service.description)

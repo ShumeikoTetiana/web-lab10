@@ -1,0 +1,6 @@
+[
+  { "icon": "desktop", "title": "WEB DESIGN", "text": "Donec elit non mi porta gravida euismod eget metus. Aenean eu leo quam. Pellentesque ornare sem por quam venenatis vestibulum." },
+  { "icon": "video", "title": "MOTION VIDEO", "text": "Aenean lacinia bibendum nulla sed consectetur. Nullam id dolor id nibh ultricies vehicula ut elit. Sed posuere consectetur." },
+  { "icon": "print", "title": "PRINT DESIGN", "text": "Maecenas sed diam eget risus varius blandit amet non magna. Nullam id dolor id nibh ultricies vehiculaelit praesent commodo." },
+  { "icon": "heart", "title": "ILLUSTRATION", "text": "Cum sociis natoque penatibus et dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac at." }
+]

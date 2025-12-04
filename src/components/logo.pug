@@ -1,2 +1,2 @@
-a.logo(href='/')
-    img(src="/src/assets/logo.svg" alt="logo" class="logo logo-header" width='70')
+mixin logo(text, className)
+    h1(class=className || 'logo')= text

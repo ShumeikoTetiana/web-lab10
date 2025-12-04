@@ -1,0 +1,59 @@
+mixin journalPost(data, isAlt)
+    a.journal-post(href='#', class=isAlt ? 'alt-post' : '', tabindex='0')
+        if !isAlt
+            .post-image(class='placeholder-post-' + data.id)
+
+        .post-content
+            p.post-meta= data.date + ' / ' + data.category
+            h3= data.title
+            p.post-excerpt= data.excerpt
+
+        if isAlt
+            .post-image(class='placeholder-post-' + data.id)
+
+section.journal-section
+    .container
+        .section-heading
+            h2.section-title FROM THE JOURNAL
+                span.red-line --
+        p.section-subtitle.light-text Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla.
+
+        .journal-grid
+            -
+                var posts = [
+                    {
+                        id: 1,
+                        date: 'OCT 13, 2014',
+                        category: 'IDENTITY',
+                        title: 'SOLICITUDIN TORTOR INCEPTOS',
+                        excerpt: 'Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh.',
+                        isAlt: false
+                    },
+                    {
+                        id: 2,
+                        date: 'OCT 23, 2014',
+                        category: 'BRANDING',
+                        title: 'AMET INCEPTOS FRINGILLA FUSCE',
+                        excerpt: 'Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh.',
+                        isAlt: true
+                    },
+                    {
+                        id: 3,
+                        date: 'SEP 19, 2014',
+                        category: 'IDENTITY',
+                        title: 'CURSUS MALESUADA JUSTO',
+                        excerpt: 'Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh.',
+                        isAlt: false
+                    },
+                    {
+                        id: 4,
+                        date: 'SEP 27, 2014',
+                        category: 'BRANDING',
+                        title: 'ORNARE CURSUS BIBENDUM PURUS',
+                        excerpt: 'Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh.',
+                        isAlt: true
+                    }
+                ]
+
+            each post in posts
+                +journalPost(post, post.isAlt)

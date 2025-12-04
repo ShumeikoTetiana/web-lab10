@@ -1,40 +1,44 @@
-$color-primary-darker: #2d2d2d;
-$color-primary-dark: #7c7575;
-$color-primary: #999;
-$color-primary-light: #e6e6e6;
-$color-primary-lighter: #fafafa;
 
-$text-color: #333;
-$font-main: 'Inter', system-ui, sans-serif;
+$primary-color: #ff6b6b;
+$primary-hover: #e65a5a;
+$primary-active: #c74d4d;
+$dark-hover: #cc5555;
 
-$grid-breakpoints: (
-        xs: 0,
-        sm: 544px,
-        md: 768px,
-        lg: 992px,
-        xl: 1200px,
-        xxl: 1600px
-);
+$text-color: #444;
+$text-light: #555;
+$text-lighter: #888;
+$text-dark: #000;
 
-$grid-columns: 12;
-$grid-fluid: false;
-$grid-gutter-widths: (
-        down sm: 40px,
-        up md: 30px,
-);
+$bg-white: white;
+$bg-light: #f7f7f7;
+$bg-dark: #222;
+$bg-grey: #f0f0f0;
+$bg-highlight: rgba(146, 216, 197, 0.22);
 
-$container-max-widths: (
-        sm: 540px,
-        md: 720px,
-        lg: 960px,
-        xl: 1140px
-);
+$border-color: #eee;
+$border-light: #ddd;
 
-$border-radius: 5px;
+$font-primary: 'Open Sans', Arial, sans-serif;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
 
-:root {
-  --font-main: #{$font-main};
-  --color-primary: #{$color-primary};
-  --color-secondary: #{$color-primary-light};
-  --text-color: #{$text-color};
-}
+$container-width: 1170px;
+$header-height: 90px;
+
+$spacing-xs: 5px;
+$spacing-sm: 10px;
+$spacing-md: 15px;
+$spacing-lg: 20px;
+$spacing-xl: 30px;
+$spacing-xxl: 40px;
+$spacing-xxxl: 50px;
+$spacing-huge: 80px;
+
+$transition-fast: 0.2s;
+$transition-medium: 0.3s;
+
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1170px;

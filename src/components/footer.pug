@@ -1,5 +1,19 @@
-footer.footer
-    .footer-outer
-        .footer-inner
-            include logo
-            h4 Приєднуйся і живи зі мною у світі солодощів!
+mixin socialIcon(network, url)
+    -
+        var iconClass = 'custom-icon-' + network.toLowerCase()
+    a.social-icon(href=url, tabindex='0')
+        i(class=iconClass)
+
+footer.main-footer
+    .container.footer-content
+        p.copyright &copy; 2014 Keepsake. All rights reserved. Theme by elemis.
+        .social-links
+            -
+                var socialNetworks = [
+                    { name: 'facebook', url: '#' },
+                    { name: 'telegram', url: '#' },
+                    { name: 'google', url: '#' }
+                ]
+
+            each social in socialNetworks
+                +socialIcon(social.name, social.url)

@@ -1,15 +1,126 @@
-@use '../utils/mixins' as *;
+.main-header {
+  background-color: $bg-white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 
-.header {
-  // declare mixins before styles
+  .header-content {
+    @include flex-between;
+    height: $header-height;
+  }
 
+  .logo {
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-weight: $font-weight-extra-bold;
+    margin: 0;
+  }
+}
+
+.main-nav {
+  display: flex;
+  gap: $spacing-xl;
+
+  .nav-link {
+    font-size: 13px;
+    font-weight: $font-weight-bold;
+    letter-spacing: 1px;
+    padding: 0 $spacing-xs;
+    line-height: $header-height;
+    text-transform: uppercase;
+    position: relative;
+
+    &:hover,
+    &:focus {
+      color: $primary-color;
+    }
+
+    &:active {
+      color: $dark-hover;
+    }
+  }
+}
+
+.heart-icon {
+  background-color: $primary-color;
+  background-image: url("src/assets/img/heart.png");
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  align-self: center;
+  background-position: center;
   @include flex-center;
-  background: var(--color-primary);
-  color: white;
-  padding: 1rem;
-  text-align: center;
+}
 
-  h1 {
-    font-size: 2rem;
+.dropdown-menu-wrapper {
+  position: relative;
+  height: $header-height;
+
+  .dropdown-menu {
+    position: absolute;
+    top: $header-height;
+    left: -$spacing-md;
+    background-color: $bg-white;
+    @include box-shadow(0, 5px, 10px, 0.1);
+    min-width: 150px;
+    visibility: hidden;
+    opacity: 0;
+
+    a {
+      padding: $spacing-sm $spacing-md;
+      font-size: 13px;
+      display: block;
+      white-space: nowrap;
+      outline: none;
+
+      &:hover,
+      &:focus {
+        background-color: $bg-light;
+        color: $primary-color;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus-within {
+    .dropdown-menu {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.menu-toggle-checkbox {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  position: relative;
+  width: 30px;
+  outline: none;
+  z-index: 1001;
+  align-self: center;
+  background-color: $primary-color;
+  border-radius: 1px;
+  height: 1px;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: $primary-color;
+    position: absolute;
+    left: 0;
+    border-radius: 1px;
+  }
+
+  &::before {
+    top: -8px;
+  }
+
+  &::after {
+    bottom: -8px;
   }
 }

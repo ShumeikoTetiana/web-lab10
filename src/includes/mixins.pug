@@ -1,0 +1,6 @@
+mixin dropdown(title, links)
+    .dropdown-menu-wrapper(tabindex="-1")
+        a.nav-link.dropdown-toggle(href="#")= title
+        .dropdown-menu
+            each link in links
+                a(href="#")= link.text

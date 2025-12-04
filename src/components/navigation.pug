@@ -1,5 +1,58 @@
-nav(class="navigation")
-    ul
-        each link in navLinks
-            li
-                a(href=link.href)= link.text
+mixin navLink(href, text)
+    a.nav-link(href=href)= text
+
+mixin navDropdown(title, items)
+    .dropdown-menu-wrapper(tabindex='-1')
+        a.nav-link.dropdown-toggle(href='#')= title
+        .dropdown-menu
+            each item in items
+                a(href=item.url)= item.text
+
+-
+    var navItems = [
+        { type: 'link', text: 'HOME', url: '#' },
+        {
+            type: 'dropdown',
+            text: 'ABOUT US',
+            items: [
+                { text: 'Our Team', url: '#' },
+                { text: 'Mission & Vision', url: '#' },
+                { text: 'Testimonials', url: '#' },
+                { text: 'Contact Info', url: '#' }
+            ]
+        },
+        {
+            type: 'dropdown',
+            text: 'OUR WORKS',
+            items: [
+                { text: 'Branding', url: '#' },
+                { text: 'Print Design', url: '#' },
+                { text: 'Websites', url: '#' },
+                { text: 'Case Studies', url: '#' }
+            ]
+        },
+        {
+            type: 'dropdown',
+            text: 'JOURNAL',
+            items: [
+                { text: 'Company News', url: '#' },
+                { text: 'Design Articles', url: '#' },
+                { text: 'Tutorials', url: '#' },
+                { text: 'Archives', url: '#' }
+            ]
+        },
+        { type: 'link', text: 'CONTACT', url: '#' }
+    ]
+
+input#menu-toggle-checkbox.menu-toggle-checkbox(type='checkbox')
+label.menu-toggle(for='menu-toggle-checkbox')
+    span.sr-only Toggle navigation
+
+nav#mainNav.main-nav
+    each item in navItems
+        if item.type === 'link'
+            +navLink(item.url, item.text)
+        else if item.type === 'dropdown'
+            +navDropdown(item.text, item.items)
+
+    .nav-link.heart-icon(tabindex='0')

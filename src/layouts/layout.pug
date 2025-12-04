@@ -1,0 +1,18 @@
+block variables
+    - var pageTitle = 'Keepsake'
+    - var lang = 'uk'
+
+doctype html
+html(lang=lang)
+    head
+        link(rel='stylesheet', href='src/styles/main.css')
+        title= pageTitle
+    body
+        block header
+            include ../components/header.pug
+
+        main
+            block content
+
+        block footer
+            include ../components/footer.pug
