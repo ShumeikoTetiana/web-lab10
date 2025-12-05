@@ -66,7 +66,7 @@
   @each $name, $data in $social-icons {
     .custom-icon-#{$name} {
       background-color: nth($data, 1);
-      background-image: url('src/assets/img/' + nth($data, 2));
+      background-image: url('../assets/img/' + nth($data, 2));
     }
   }
 }

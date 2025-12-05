@@ -1,0 +1,58 @@
+.journal-section {
+  padding: $spacing-xxxl 0;
+  background-color: $bg-white;
+
+  .journal-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xl;
+  }
+
+  .journal-post {
+    display: flex;
+    flex-basis: calculate-grid-width(2, $spacing-md);
+    border: 1px solid $border-color;
+    background-color: $bg-white;
+    color: $text-light;
+
+    &:hover {
+      @include box-shadow;
+      border-color: $primary-color;
+
+      h3 {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .post-image {
+    flex-basis: 40%;
+    min-height: 180px;
+    background-size: cover;
+
+    &.placeholder-post-1 { background-image: url('/src/assets/img/metal.jpg'); }
+    &.placeholder-post-2 { background-image: url('/src/assets/img/OP.jpg'); }
+    &.placeholder-post-3 { background-image: url('/src/assets/img/double-card-mockup.jpg'); }
+    &.placeholder-post-4 { background-image: url('/src/assets/img/notebook-mockup.jpg'); }
+  }
+
+  .post-content {
+    flex-basis: 60%;
+    padding: 25px;
+
+    .post-meta {
+      font-size: 11px;
+      color: $text-lighter;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: $font-weight-bold;
+    }
+
+    .post-excerpt {
+      font-size: 13px;
+      color: $text-lighter;
+    }
+  }
+}

@@ -3,7 +3,7 @@
 
 body {
   font-family: $font-primary;
-  font-weight: $font-weight-regular;
+  font-weight: $font-weight-normal;
   color: $text-color;
   line-height: 1.6;
 }
@@ -25,11 +25,11 @@ a {
 }
 
 .bold-text {
-  font-weight: $font-weight-bold; // 700
+  font-weight: $font-weight-bold;
 }
 
 .light-text {
-  font-weight: $font-weight-light; // 300
+  font-weight: $font-weight-light;
 }
 
 .section-title, .post-meta {
@@ -43,6 +43,6 @@ a {
 
 .post-meta {
   font-size: 11px;
-  color: $text-lighter; // #888
-  font-weight: $font-weight-bold; // 700
+  color: $text-lighter;
+  font-weight: $font-weight-bold; 
 }

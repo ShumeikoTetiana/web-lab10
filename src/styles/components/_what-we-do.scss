@@ -1,0 +1,71 @@
+.what-we-do-section {
+  padding: $spacing-huge 0;
+
+  .services-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: $spacing-xl;
+  }
+
+  .service-item {
+    flex-basis: calculate-grid-width(4, 22.5px);
+    text-align: center;
+    padding: $spacing-lg $spacing-sm;
+    border-radius: 5px;
+    color: $text-color;
+
+    h3 {
+      font-size: 14px;
+      font-weight: $font-weight-bold;
+      margin-bottom: $spacing-sm;
+    }
+
+    p {
+      color: $text-lighter;
+      font-weight: $font-weight-light;
+      max-height: 4.8em;
+      overflow: hidden;
+    }
+
+    &:hover {
+      background-color: $bg-white;
+      @include box-shadow(0, 5px, 15px, 0.05);
+
+      .icon-circle {
+        background-color: $primary-color;
+        color: white;
+      }
+    }
+  }
+
+  .icon-circle {
+    @include icon-circle;
+  }
+  .custom-icon-desktop,
+  .custom-icon-video,
+  .custom-icon-print,
+  .custom-icon-heart {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+  }
+
+  $icons: (
+          'desktop': '../assets/img/web-site.png',
+          'video': '../assets/img/montage.png',
+          'print': '../assets/img/printer.png',
+          'heart': '../assets/img/illustration.png'
+  );
+
+  @each $name, $file in $icons {
+    .custom-icon-#{$name} {
+      background-image: url($file);
+    }
+  }
+}
+
+

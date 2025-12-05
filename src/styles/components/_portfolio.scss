@@ -1,0 +1,70 @@
+.works-section {
+  background-color: $bg-white;
+  padding-bottom: $spacing-huge;
+
+  .filter-button {
+    @include button-base;
+    padding: $spacing-sm $spacing-md;
+    font-size: 12px;
+  }
+
+  .portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+    margin-right: -$spacing-sm;
+  }
+
+  .grid-item {
+    position: relative;
+    flex-basis: calculate-grid-width(3, $spacing-sm);
+    height: 270px;
+    background-color: $bg-grey;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    &.item-1 { background-image: url('/src/assets/img/street-label.jpg'); }
+    &.item-2 { background-image: url('/src/assets/img/card.jpg'); }
+    &.item-3 { background-image: url('/src/assets/img/stickers.jpg'); }
+    &.item-4 { background-image: url('/src/assets/img/bag.jpg'); }
+    &.item-5 { background-image: url('/src/assets/img/geometriceskaa.jpg'); }
+    &.item-6 { background-image: url('/src/assets/img/profile.jpg'); }
+    &.item-7 { background-image: url('/src/assets/img/minimal.jpg'); }
+    &.item-8 { background-image: url('/src/assets/img/notebook.jpg'); }
+    &.item-9 { background-image: url('/src/assets/img/card-mockup.jpg'); }
+
+    &:hover .hover-overlay {
+      opacity: 1;
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 0 4px $primary-color;
+      z-index: 10;
+    }
+  }
+
+  .hover-overlay {
+    @include overlay(0);
+    @include flex-center;
+    font-size: 30px;
+    color: white;
+  }
+
+  .contact-prompt {
+    text-align: center;
+    padding-top: $spacing-xxxl;
+
+    p {
+      font-size: 18px;
+      color: $text-light;
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  .contact-button {
+    @include button-base;
+    display: inline-block;
+  }
+}

@@ -73,7 +73,7 @@
       @include transition(max-height $transition-medium);
 
       a {
-        padding: $spacing-sm $spacing-md $spacing-sm $spacing-xl; // відступ для підменю
+        padding: $spacing-sm $spacing-md $spacing-sm $spacing-xl;
         color: #666;
         border-bottom: 1px solid $border-light;
       }

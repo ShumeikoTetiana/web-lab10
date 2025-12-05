@@ -1,5 +1,6 @@
 .container {
-    width: 1170px;
+    width: 100%;
+    max-width: 1170px;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -194,15 +195,15 @@
     overflow: hidden;
 }
 
-.item-1 { background-image: url('../../../../../projects/web-lab10/src/assets/img/street-label.jpg'); }
-.item-2 { background-image: url('../../../../../projects/web-lab10/src/assets/img/card.jpg'); }
-.item-3 { background-image: url('../../../../../projects/web-lab10/src/assets/img/stickers.jpg'); }
-.item-4 { background-image: url('../../../../../projects/web-lab10/src/assets/img/bag.jpg'); }
-.item-6 { background-image: url('../../../../../projects/web-lab10/src/assets/img/profile.jpg'); }
-.item-7 { background-image: url('../../../../../projects/web-lab10/src/assets/img/minimal.jpg'); }
-.item-8 { background-image: url('../../../../../projects/web-lab10/src/assets/img/notebook.jpg'); }
-.item-9 { background-image: url('../../../../../projects/web-lab10/src/assets/img/card-mockup.jpg'); }
-.item-5 { background-image: url('../../../../../projects/web-lab10/src/assets/img/geometriceskaa.jpg');}
+.item-1 { background-image: url('/src/assets/img/street-label.jpg'); }
+.item-2 { background-image: url('/src/assets/img/card.jpg'); }
+.item-3 { background-image: url('/src/assets/img/stickers.jpg'); }
+.item-4 { background-image: url('/src/assets/img/bag.jpg'); }
+.item-6 { background-image: url('/src/assets/img/profile.jpg'); }
+.item-7 { background-image: url('/src/assets/img/minimal.jpg'); }
+.item-8 { background-image: url('/src/assets/img/notebook.jpg'); }
+.item-9 { background-image: url('/src/assets/img/card-mockup.jpg'); }
+.item-5 { background-image: url('../assets/img/geometriceskaa.jpg');}
 
 .hover-overlay {
     position: absolute;
@@ -288,16 +289,16 @@
     background-position: center;
 }
 .custom-icon-desktop {
-    background-image: url('../../../../../projects/web-lab10/src/assets/img/web-site.png');
+    background-image: url('/src/assets/img/web-site.png');
 }
 .custom-icon-video {
-    background-image: url('../../../../../projects/web-lab10/src/assets/img/montage.png');
+    background-image: url('/src/assets/img/montage.png');
 }
 .custom-icon-print {
-    background-image: url('../../../../../projects/web-lab10/src/assets/img/printer.png');
+    background-image: url('/src/assets/img/printer.png');
 }
 .custom-icon-heart {
-    background-image: url('../../../../../projects/web-lab10/src/assets/img/illustration.png');
+    background-image: url('/src/assets/img/illustration.png');
 }
 
 .journal-section {
@@ -446,9 +447,7 @@
 
 
 @media (max-width: 768px) {
-    .container {
-        width: 100%;
-    }
+
     .main-header {
         position: fixed;
         top: 0;
@@ -460,6 +459,10 @@
     body {
         padding-top: 90px;
     }
+    .header-content {
+        height: auto;
+        padding: 10px 15px;}
+
     .menu-toggle {
         display: block;
         height: 3px;
